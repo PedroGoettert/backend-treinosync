@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres:16
+    container_name: treinosync-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: treinosync
+    ports:
+      - "5432:5432"
+    volumes:
+      - treinosync_pg:/var/lib/postgresql/data
+
+  api:
+    build: .
+    container_name: treinosync-api
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/treinosync?schema=public
+      PORT: 3333
+      # Ajuste para o Better Auth depois
+      AUTH_SECRET: "dev-secret-change-me"
+    ports:
+      - "3333:3333"
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+volumes:
+  treinosync_pg:
