@@ -7,6 +7,7 @@ import {
 } from "fastify-type-provider-zod";
 import { env } from "./config/env/index.js";
 import { auth } from "./lib/auth.js";
+import { authRoutes } from "./module/auth/auth.routes.js";
 
 const server = Fastify().withTypeProvider<ZodTypeProvider>();
 
@@ -62,6 +63,8 @@ server.route({
 server.get("/health", async () => {
 	return { ok: true };
 });
+
+server.register(authRoutes, { prefix: "/api/auth" });
 
 server
 	.listen({

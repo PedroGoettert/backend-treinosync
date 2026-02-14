@@ -1,2 +1,13 @@
-POST http://localhost:3333/users
+GET http://localhost:3333/health
+
+
+###
+
+POST http://localhost:3333/api/auth/signup
 Content-Type: application/json
+
+{
+    "email": "jpedrogoettert@hotmail.com", 
+    "password": "123456789", 
+    "name": "Pedro de Souza Goettert"
+}
