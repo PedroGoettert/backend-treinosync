@@ -7,7 +7,7 @@ import {
 } from "fastify-type-provider-zod";
 import { env } from "./config/env/index.js";
 import { auth } from "./lib/auth.js";
-import { authRoutes } from "./module/auth/auth.routes.js";
+import { authRoutes } from "./modules/auth/auth.routes.js";
 
 const server = Fastify().withTypeProvider<ZodTypeProvider>();
 

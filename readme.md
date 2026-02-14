@@ -1,3 +1,24 @@
+funcionalidades do projeto:
+
+
+Treinador/Professor
+Criar treino - nome do treino (A,B,C), Exercício, repetição, series, observação - Prioridade
+Adicionar evolução do aluno - Medidas (Peso, perímetro (Cintura, braço, coxa, panturrilha, quadril e abdômen, IMC (peso/altura^2), % de gordura) - Não prioridade
+
+Aluno
+Visualizar o treino - Prioridade
+concluir exercício - Prioridade
+Ao concluir todos exercícios, concluir o treino do dia - Prioridade
+feedback do exercício - Prioridade
+
+Visualizar a sua evolução - Não prioridade
+
+
+
+* Vídeo do exercício.
+* Adicionar dietas - Nutricionistas.
+
+
 Estrutura de pasta
 
 backend/
